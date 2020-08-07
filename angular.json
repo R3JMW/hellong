@@ -25,11 +25,14 @@
             "aot": true,
             "assets": [
               "src/favicon.ico",
-              "src/assets"
+              "src/assets",
+              {
+                "glob": "**/*",
+                "input": "./node_modules/@ant-design/icons-angular/src/inline-svg/",
+                "output": "/assets/"
+              }
             ],
-            "styles": [
-              "src/styles.scss"
-            ],
+            "styles": ["src/theme.less", "src/styles.scss"],
             "scripts": []
           },
           "configurations": {
@@ -87,11 +90,13 @@
             "polyfills": "src/polyfills.ts",
             "tsConfig": "tsconfig.spec.json",
             "karmaConfig": "karma.conf.js",
-            "assets": [
-              "src/favicon.ico",
-              "src/assets"
-            ],
+            "assets": ["src/favicon.ico", "src/assets"],
             "styles": [
+              "node_modules/primeng/resources/themes/bootstrap4-light-blue/theme.css",
+              "node_modules/primeng/resources/primeng.min.css",
+              "node_modules/ng-zorro-antd/ng-zorro-antd.min.css",
+              "node_modules/reveal.js/dist/reveal.css",
+              "node_modules/reveal.js/dist/theme/moon.css",
               "src/styles.scss"
             ],
             "scripts": []
@@ -105,9 +110,7 @@
               "tsconfig.spec.json",
               "e2e/tsconfig.json"
             ],
-            "exclude": [
-              "**/node_modules/**"
-            ]
+            "exclude": ["**/node_modules/**"]
           }
         },
         "e2e": {
@@ -123,6 +126,7 @@
           }
         }
       }
-    }},
+    }
+  },
   "defaultProject": "hellong"
 }

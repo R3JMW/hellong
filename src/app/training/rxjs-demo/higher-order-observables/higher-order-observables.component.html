@@ -1,0 +1,36 @@
+<nz-page-header class="site-page-header">
+  <!-- breadcrumb -->
+  <nz-breadcrumb nz-page-header-breadcrumb>
+    <nz-breadcrumb-item>
+      <a routerLink="/dashboard">
+        <i nz-icon nzType="home" nzTheme="outline"></i>
+        Dashboard
+      </a>
+    </nz-breadcrumb-item>
+  </nz-breadcrumb>
+  <!-- title -->
+  <nz-page-header-title>Higher-order Observables</nz-page-header-title>
+  <!-- subtitle -->
+  <nz-page-header-subtitle></nz-page-header-subtitle>
+  <!-- tags -->
+  <nz-page-header-tags>
+    <nz-tag [nzColor]="'blue'">In Progress</nz-tag>
+  </nz-page-header-tags>
+  <!-- content -->
+  <nz-page-header-content></nz-page-header-content>
+  <!-- footer -->
+  <nz-page-header-footer>
+    <nz-tabset nzLinkRouter>
+      <nz-tab>
+        <a nz-tab-link [routerLink]="['fundamentals']">Fundamentals</a>
+      </nz-tab>
+      <nz-tab>
+        <a nz-tab-link [routerLink]="['operators']">Operators</a>
+      </nz-tab>
+      <nz-tab>
+        <a nz-tab-link [routerLink]="['best-practices']">Best Practices</a>
+      </nz-tab>
+    </nz-tabset>
+  </nz-page-header-footer>
+</nz-page-header>
+<router-outlet></router-outlet>
