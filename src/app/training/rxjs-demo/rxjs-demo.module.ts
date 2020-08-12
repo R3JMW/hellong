@@ -18,6 +18,7 @@ import { IconsProviderModule } from 'src/app/icons-provider.module';
 import { FundamentalsComponent } from './higher-order-observables/fundamentals/fundamentals.component';
 import { OperatorsComponent } from './higher-order-observables/operators/operators.component';
 import { BestPracticesComponent } from './higher-order-observables/best-practices/best-practices.component';
+import { CaseStudyComponent } from './higher-order-observables/case-study/case-study.component';
 
 @NgModule({
   declarations: [
@@ -26,6 +27,7 @@ import { BestPracticesComponent } from './higher-order-observables/best-practice
     FundamentalsComponent,
     OperatorsComponent,
     BestPracticesComponent,
+    CaseStudyComponent,
   ],
   imports: [
     CommonModule,
