@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnDestroy } from '@angular/core';
 
 import { map, tap, mergeMap, concatMap, switchMap, exhaustMap } from 'rxjs/operators';
 
@@ -10,7 +10,7 @@ import { MockObservablesService } from './common/services/mock-observables.servi
   styleUrls: ['./compare-demo.component.scss'],
   providers: [MockObservablesService]
 })
-export class CompareDemoComponent {
+export class CompareDemoComponent implements OnDestroy {
   public mergeObservables: any[] = [[], []];
   public concatObservables: any[] = [[], []];
   public switchObservables: any[] = [[], []];
@@ -128,4 +128,6 @@ export class CompareDemoComponent {
       )
       .subscribe(e => this.exhaustResultObservable.push({ TDOA: e.TDOA, result: e.result }));
   }
+
+  ngOnDestroy(): void {}
 }
