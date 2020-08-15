@@ -21,15 +21,15 @@ const routes: Routes = [
           { path: 'operators', component: OperatorsComponent },
           { path: 'best-practices', component: BestPracticesComponent },
           { path: 'case-study', component: CaseStudyComponent },
-          { path: '', redirectTo: 'fundamentals', pathMatch: 'full' },
-        ],
-      },
-    ],
-  },
+          { path: '', redirectTo: 'fundamentals', pathMatch: 'full' }
+        ]
+      }
+    ]
+  }
 ];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
-  exports: [RouterModule],
+  exports: [RouterModule]
 })
 export class RxjsDemoRoutingModule {}

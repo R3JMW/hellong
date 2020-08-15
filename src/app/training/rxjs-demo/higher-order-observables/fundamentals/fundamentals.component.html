@@ -3,15 +3,17 @@
   <ul>
     <li>
       <h2>
-        Observables most commonly emit ordinary values like strings and numbers,
-        but surprisingly often, it is necessary to handle Observables of
-        Observables, so-called higher-order Observables.
+        Observables most commonly emit ordinary values like strings and numbers, but surprisingly often, it is necessary
+        to handle Observables of Observables, so-called higher-order Observables.
       </h2>
+      <button #action nz-button nzType="primary" (click)="onAction()">Action</button>
     </li>
+    <hr />
     <ul>
-      <li>mergeMap()</li>
-      <li>concatMap()</li>
-      <li>switchMap()</li>
+      <li>map() + mergeAll() => mergeMap()</li>
+      <li>map() + concatAll() => concatMap()</li>
+      <li>map() + switchAll() => switchMap()</li>
+      <li>map() + exhaust() => exhaustMap()</li>
     </ul>
   </ul>
 </div>

@@ -1,0 +1,51 @@
+<h1>mergeMap()</h1>
+<h2>
+  Converts a higher-order Observable into a first-order Observable which concurrently delivers all values that are
+  emitted on the inner Observables.
+</h2>
+<button nz-button nzType="primary" (click)="onAction('mergeMap')">Action</button>
+<app-marble-diagram-parser
+  [start]="mergeStart"
+  [step]="150"
+  [observables]="mergeObservables"
+  [operator]="'mergeMap()'"
+  [resultObservable]="mergeResultObservable"
+></app-marble-diagram-parser>
+<h1>concatMap()</h1>
+<h2>
+  Flattens an Observable-of-Observables by putting one inner Observable after the other.
+</h2>
+<button nz-button nzType="primary" (click)="onAction('concatMap')">Action</button>
+<app-marble-diagram-parser
+  [start]="concatStart"
+  [step]="100"
+  [observables]="concatObservables"
+  [operator]="'concatMap()'"
+  [resultObservable]="concatResultObservable"
+></app-marble-diagram-parser>
+<h1>switchMap()</h1>
+<h2>
+  Converts a higher-order Observable into a first-order Observable producing values only from the most recent observable
+  sequence.
+</h2>
+<button nz-button nzType="primary" (click)="onAction('switchMap')">Action</button>
+<app-marble-diagram-parser
+  [start]="switchStart"
+  [step]="100"
+  [observables]="switchObservables"
+  [operator]="'switchMap()'"
+  [resultObservable]="switchResultObservable"
+></app-marble-diagram-parser>
+<h1>exhaustMap()</h1>
+<h2>
+  Projects each source value to an Observable which is merged in the output Observable only if the previous projected
+  Observable has completed.
+</h2>
+<button nz-button nzType="primary" (click)="onAction('exhaustMap')">Action</button>
+<app-marble-diagram-parser
+  [start]="exhaustStart"
+  [step]="100"
+  [observables]="exhaustObservables"
+  [operator]="'exhaustMap()'"
+  [resultObservable]="exhaustResultObservable"
+></app-marble-diagram-parser>

@@ -5,6 +5,6 @@ import { MarbleDiagramParserComponent } from './marble-diagram-parser.component'
 @NgModule({
   declarations: [MarbleDiagramParserComponent],
   imports: [CommonModule],
-  exports: [MarbleDiagramParserComponent],
+  exports: [MarbleDiagramParserComponent]
 })
 export class MarbleDiagramParserModule {}

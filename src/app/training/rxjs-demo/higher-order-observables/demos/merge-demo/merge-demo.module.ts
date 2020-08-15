@@ -10,12 +10,6 @@ import { MarbleDiagramParserModule } from 'src/app/training/rxjs-demo/common/com
 
 @NgModule({
   declarations: [MergeDemoComponent],
-  imports: [
-    CommonModule,
-    NzPageHeaderModule,
-    NzButtonModule,
-    MarbleDiagramParserModule,
-    MergeDemoRoutingModule,
-  ],
+  imports: [CommonModule, NzPageHeaderModule, NzButtonModule, MarbleDiagramParserModule, MergeDemoRoutingModule]
 })
 export class MergeDemoModule {}

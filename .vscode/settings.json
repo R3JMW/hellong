@@ -1,15 +1,15 @@
 {
-    "eslint.alwaysShowStatus": true,
-    "editor.formatOnSave": true,
-    "editor.defaultFormatter": "esbenp.prettier-vscode",
-    "eslint.format.enable": true,
-    "eslint.options": {
-      "configFile": "./.eslintrc.yml"
-    },
-    "editor.codeActionsOnSave": {
-      "source.fixAll": true,
-      "source.fixAll.eslint": true
-    },
-    "javascript.implicitProjectConfig.experimentalDecorators": true
-  }
-  
+  "editor.formatOnSave": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+
+  "editor.codeActionsOnSave": {
+    "source.fixAll": true,
+    "source.fixAll.eslint": true
+  },
+  "eslint.alwaysShowStatus": true,
+  "eslint.format.enable": true,
+  "eslint.options": {
+    "configFile": "./.eslintrc.yml"
+  },
+  "javascript.implicitProjectConfig.experimentalDecorators": true
+}

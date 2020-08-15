@@ -7,10 +7,11 @@ import {
   NzPageHeaderModule,
   NzBreadCrumbModule,
   NzLayoutModule,
-  NzButtonModule,
+  NzButtonModule
 } from 'ng-zorro-antd';
 
 import { RxjsDemoRoutingModule } from './rxjs-demo-routing.module';
+import { CompareDemoModule } from './higher-order-observables/demos/compare-demo/compare-demo.module';
 import { RxjsDemoComponent } from './rxjs-demo.component';
 import { HigherOrderObservablesComponent } from './higher-order-observables/higher-order-observables.component';
 
@@ -27,10 +28,11 @@ import { CaseStudyComponent } from './higher-order-observables/case-study/case-s
     FundamentalsComponent,
     OperatorsComponent,
     BestPracticesComponent,
-    CaseStudyComponent,
+    CaseStudyComponent
   ],
   imports: [
     CommonModule,
+    CompareDemoModule,
     NzPageHeaderModule,
     NzBreadCrumbModule,
     IconsProviderModule,
@@ -38,7 +40,7 @@ import { CaseStudyComponent } from './higher-order-observables/case-study/case-s
     NzTagModule,
     NzLayoutModule,
     NzButtonModule,
-    RxjsDemoRoutingModule,
-  ],
+    RxjsDemoRoutingModule
+  ]
 })
 export class RxjsDemoModule {}
