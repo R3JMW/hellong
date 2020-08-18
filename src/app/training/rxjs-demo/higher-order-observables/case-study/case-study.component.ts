@@ -1,6 +1,6 @@
 import { Component, OnInit, AfterViewInit, ViewChild, ElementRef, OnDestroy } from '@angular/core';
 import { fromEvent, Subject, interval } from 'rxjs';
-import { switchMap, mapTo, take } from 'rxjs/operators';
+import { switchMap, mapTo, take, debounceTime } from 'rxjs/operators';
 
 @Component({
   selector: 'app-case-study',
@@ -17,7 +17,10 @@ export class CaseStudyComponent implements OnInit, AfterViewInit, OnDestroy {
   @ViewChild('enddate', { read: ElementRef, static: false })
   private enddate: ElementRef;
 
-  private defaultOptions: DatepickerOptions = {
+  @ViewChild('input', { read: ElementRef, static: false })
+  private input: ElementRef;
+
+  private readonly defaultOptions: DatepickerOptions = {
     orientation: 'auto right',
     keyboardNavigation: false,
     forceParse: false,
@@ -26,25 +29,39 @@ export class CaseStudyComponent implements OnInit, AfterViewInit, OnDestroy {
 
   private changeDateSubject: Subject<any> = new Subject();
 
+  public inputContent: string;
+
   constructor() {}
 
   ngOnInit(): void {
     this.changeDateSubject
-      .pipe(switchMap(e => interval(500).pipe(take(1), mapTo(e))))
-      .subscribe(res => console.log('subject', res));
+      // .pipe(switchMap(e => interval(500).pipe(take(1), mapTo(e))))
+      // .pipe(debounceTime(500))
+      .subscribe(() =>
+        console.log(
+          'subject',
+          $(this.startdate.nativeElement).datepicker('getDate'),
+          $(this.enddate.nativeElement).datepicker('getDate')
+        )
+      );
   }
 
   ngAfterViewInit(): void {
+    fromEvent(this.input.nativeElement, 'onchange').subscribe((e: any) => {
+      console.log(e);
+      this.inputContent = e;
+    });
+    // bootstrap-datepicker
     $(this.daterange.nativeElement).datepicker('updateDates');
     $(this.startdate.nativeElement).datepicker(this.defaultOptions);
     $(this.enddate.nativeElement).datepicker(this.defaultOptions);
     // Init event
-    fromEvent($(this.startdate.nativeElement), 'changeDate').subscribe(e => {
-      console.log('startdate', e);
+    fromEvent($(this.startdate.nativeElement), 'changeDate').subscribe((e: any) => {
+      console.log('startdate', e.date);
       this.changeDateSubject.next(e);
     });
-    fromEvent($(this.enddate.nativeElement), 'changeDate').subscribe(e => {
-      console.log('enddate', e);
+    fromEvent($(this.enddate.nativeElement), 'changeDate').subscribe((e: any) => {
+      console.log('enddate', e.date);
       this.changeDateSubject.next(e);
     });
   }

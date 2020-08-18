@@ -2,8 +2,11 @@
   <h1>search, typehead</h1>
   <div class="row">
     <div class="col-md-3">
-      <input class="form-control" type="text" />
-      <div></div>
+      <form>
+        <input #input class="form-control" type="text" />
+      </form>
+
+      <div>{{ inputContent }}</div>
     </div>
   </div>
   <h1>bootstrap-datepicker event</h1>
@@ -16,4 +19,7 @@
       </div>
     </div>
   </div>
+</div>
+<div class="content">
+  <app-continuous-form></app-continuous-form>
 </div>

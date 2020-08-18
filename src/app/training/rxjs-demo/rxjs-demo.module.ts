@@ -20,6 +20,7 @@ import { FundamentalsComponent } from './higher-order-observables/fundamentals/f
 import { OperatorsComponent } from './higher-order-observables/operators/operators.component';
 import { BestPracticesComponent } from './higher-order-observables/best-practices/best-practices.component';
 import { CaseStudyComponent } from './higher-order-observables/case-study/case-study.component';
+import { ContinuousFormComponent } from './higher-order-observables/case-study/continuous-form/continuous-form.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { CaseStudyComponent } from './higher-order-observables/case-study/case-s
     FundamentalsComponent,
     OperatorsComponent,
     BestPracticesComponent,
-    CaseStudyComponent
+    CaseStudyComponent,
+    ContinuousFormComponent
   ],
   imports: [
     CommonModule,

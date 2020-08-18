@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { SwitchDemoComponent } from './switch-demo.component';
+import { ContinuousFormComponent } from './continuous-form.component';
 
-describe('SwitchDemoComponent', () => {
-  let component: SwitchDemoComponent;
-  let fixture: ComponentFixture<SwitchDemoComponent>;
+describe('ContinuousFormComponent', () => {
+  let component: ContinuousFormComponent;
+  let fixture: ComponentFixture<ContinuousFormComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ SwitchDemoComponent ]
+      declarations: [ ContinuousFormComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(SwitchDemoComponent);
+    fixture = TestBed.createComponent(ContinuousFormComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
