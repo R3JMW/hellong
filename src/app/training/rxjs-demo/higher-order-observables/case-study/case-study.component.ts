@@ -1,6 +1,7 @@
 import { Component, OnInit, AfterViewInit, ViewChild, ElementRef, OnDestroy } from '@angular/core';
 import { fromEvent, Subject, interval } from 'rxjs';
 import { switchMap, mapTo, take, debounceTime } from 'rxjs/operators';
+import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-case-study',
@@ -31,7 +32,13 @@ export class CaseStudyComponent implements OnInit, AfterViewInit, OnDestroy {
 
   public inputContent: string;
 
-  constructor() {}
+  public searchForm: FormGroup;
+
+  constructor(private formBuilder: FormBuilder) {
+    this.searchForm = this.formBuilder.group({
+      search: new FormControl('', [])
+    });
+  }
 
   ngOnInit(): void {
     this.changeDateSubject
@@ -44,6 +51,10 @@ export class CaseStudyComponent implements OnInit, AfterViewInit, OnDestroy {
           $(this.enddate.nativeElement).datepicker('getDate')
         )
       );
+
+    this.searchForm.valueChanges.pipe(switchMap(e => interval(500).pipe(take(1), mapTo(e)))).subscribe(data => {
+      this.inputContent = data.search;
+    });
   }
 
   ngAfterViewInit(): void {

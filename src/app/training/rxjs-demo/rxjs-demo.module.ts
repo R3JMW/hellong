@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import {
   NzTagModule,
@@ -35,6 +36,8 @@ import { ContinuousFormComponent } from './higher-order-observables/case-study/c
   imports: [
     CommonModule,
     CompareDemoModule,
+    FormsModule,
+    ReactiveFormsModule,
     NzPageHeaderModule,
     NzBreadCrumbModule,
     IconsProviderModule,

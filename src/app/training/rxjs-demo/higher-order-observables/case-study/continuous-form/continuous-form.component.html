@@ -1,26 +1,44 @@
-<form class="form-horizontal">
+<form class="form-horizontal" [formGroup]="form">
   <div class="form-group">
     <label class="col-md-2 control-label">Name</label>
-    <div class="col-md-10">
-      <input type="text" class="form-control" placeholder="Name" />
+    <div class="col-md-4">
+      <input type="text" class="form-control" placeholder="Name" formControlName="name" />
     </div>
   </div>
   <div class="form-group">
     <label class="col-md-2 control-label">Description</label>
-    <div class="col-md-10">
-      <input type="text" class="form-control" placeholder="Description" />
+    <div class="col-md-4">
+      <input type="text" class="form-control" placeholder="Description" formControlName="desc" />
     </div>
   </div>
   <div class="form-group">
     <label class="col-md-2 control-label">Item</label>
-    <div class="col-md-10">
-      <input type="text" class="form-control" placeholder="Item" />
+    <div class="col-md-4">
+      <input type="text" class="form-control" placeholder="Item" formControlName="item" />
     </div>
   </div>
   <div class="form-group">
     <label class="col-md-2 control-label">List Cost</label>
-    <div class="col-md-10">
-      <input type="text" class="form-control" placeholder="List Cost" />
+    <div class="col-md-4">
+      <input type="text" class="form-control" placeholder="List Cost" formControlName="listCost" />
+    </div>
+  </div>
+  <div class="form-group">
+    <div class="col-md-2"></div>
+    <div class="col-md-4">
+      <button nz-button nzType="primary" (click)="onEmit()">Emit</button>
     </div>
   </div>
 </form>
+
+<div class="queue">
+  <ng-container *ngFor="let q of queue">
+    <div class="cell" [class.complete]="q.check1 && q.check2 && q.check3 && q.check4">
+      <div>Stauts - {{ q.status }}</div>
+      <div>Name - {{ q.name }} - {{ q.check1 }}</div>
+      <div>Description - {{ q.desc }} - {{ q.check2 }}</div>
+      <div>Item - {{ q.item }} - {{ q.check3 }}</div>
+      <div>List Cost - {{ q.listCost }} - {{ q.check4 }}</div>
+    </div>
+  </ng-container>
+</div>

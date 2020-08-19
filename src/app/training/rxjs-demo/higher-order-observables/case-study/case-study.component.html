@@ -1,14 +1,14 @@
 <div class="content">
   <h1>search, typehead</h1>
   <div class="row">
-    <div class="col-md-3">
-      <form>
-        <input #input class="form-control" type="text" />
+    <div class="col-md-4">
+      <form [formGroup]="searchForm">
+        <input #input class="form-control" type="text" formControlName="search" />
       </form>
-
       <div>{{ inputContent }}</div>
     </div>
   </div>
+  <hr />
   <h1>bootstrap-datepicker event</h1>
   <div class="row">
     <div class="col-md-3">
@@ -19,7 +19,7 @@
       </div>
     </div>
   </div>
-</div>
-<div class="content">
+  <hr />
+  <h1>Continuous Form</h1>
   <app-continuous-form></app-continuous-form>
 </div>
