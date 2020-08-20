@@ -33,7 +33,11 @@
 
 <div class="queue">
   <ng-container *ngFor="let q of queue">
-    <div class="cell" [class.complete]="q.check1 && q.check2 && q.check3 && q.check4">
+    <div
+      class="cell"
+      [class.inProgress]="q.status === 'inProgress' && !(q.check1 && q.check2 && q.check3 && q.check4)"
+      [class.complete]="q.check1 && q.check2 && q.check3 && q.check4"
+    >
       <div>Stauts - {{ q.status }}</div>
       <div>Name - {{ q.name }} - {{ q.check1 }}</div>
       <div>Description - {{ q.desc }} - {{ q.check2 }}</div>
